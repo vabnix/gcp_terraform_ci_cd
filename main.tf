@@ -13,10 +13,10 @@ resource "google_compute_subnetwork" "vpc_subnetwork" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = var.instance_name
-  project      = var.project_name
-  zone         = var.zone
-  machine_type = "e2-micro"
+  name                      = var.instance_name
+  project                   = var.project_name
+  zone                      = var.zone
+  machine_type              = "e2-micro"
   allow_stopping_for_update = true
 
   boot_disk {
