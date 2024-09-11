@@ -1,5 +1,5 @@
 resource "google_compute_network" "vpc_network" {
-  name                    = "tf-vpc-network"
+  name                    = var.network
   project                 = var.project_name
   auto_create_subnetworks = false
 }
@@ -8,14 +8,14 @@ resource "google_compute_subnetwork" "vpc_subnetwork" {
   name          = var.subnetwork
   project       = var.project_name
   ip_cidr_range = "10.20.0.0/16"
-  region        = "us-central1"
+  region        = var.region
   network       = google_compute_network.vpc_network.id
 }
 
 resource "google_compute_instance" "vm_instance" {
   name         = var.instance_name
   project      = var.project_name
-  zone         = "us-central1-a"
+  zone         = var.zone
   machine_type = "e2-micro"
 
   boot_disk {
