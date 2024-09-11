@@ -38,10 +38,10 @@ variable "instance_name" {
   type        = string
   default     = "tf-instance"
   description = "The name of the instance"
-}   
+}
 
 variable "firewall_name" {
-  type = string
-  default = "tf-firewall"
+  type        = string
+  default     = "tf-firewall"
   description = "The name of the firewall"
 }
