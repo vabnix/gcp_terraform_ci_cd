@@ -6,6 +6,7 @@ resource "google_compute_network" "vpc_network" {
 
 resource "google_compute_subnetwork" "vpc_subnetwork" {
   name          = var.subnetwork
+  project       = var.project_name
   ip_cidr_range = "10.20.0.0/16"
   region        = "us-central1"
   network       = google_compute_network.vpc_network.id
@@ -13,6 +14,7 @@ resource "google_compute_subnetwork" "vpc_subnetwork" {
 
 resource "google_compute_instance" "vm_instance" {
   name         = var.instance_name
+  project      = var.project_name
   machine_type = "e2-micro"
 
   boot_disk {
