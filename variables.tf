@@ -14,13 +14,13 @@ variable "zone" {
   type        = string
   default     = "us-central1-a"
   description = "The zone to deploy the resources to"
-}   
+}
 
 variable "network" {
   type        = string
   default     = "tf-vpc-network"
   description = "The name of the network to deploy the resources to"
-}   
+}
 
 variable "subnetwork" {
   type        = string
