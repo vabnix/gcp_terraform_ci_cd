@@ -15,6 +15,7 @@ resource "google_compute_subnetwork" "vpc_subnetwork" {
 resource "google_compute_instance" "vm_instance" {
   name         = var.instance_name
   project      = var.project_name
+  zone         = "us-central1-a"
   machine_type = "e2-micro"
 
   boot_disk {
